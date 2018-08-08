@@ -45,7 +45,7 @@
     "bitcore-build": "https://github.com/bitpay/bitcore-build.git#d4e8b2b2f1e2c065c3a807dcb6a6250f61d67ab3",
     "brfs": "^1.2.0",
     "chai": "^1.10.0",
-    "gulp": "^3.8.10",
+    "gulp": "^3.9.1",
     "sinon": "^1.13.0"
   },
   "license": "MIT"
