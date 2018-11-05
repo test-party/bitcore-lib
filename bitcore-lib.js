@@ -2542,6 +2542,8 @@ Signature.SIGHASH_SINGLE = 0x03;
 Signature.SIGHASH_FORKID = 0x40;
 Signature.SIGHASH_ANYONECANPAY = 0x80;
 
+Signature.FORKID_CBN_LYRA2RC0BAN = 88;
+
 module.exports = Signature;
 
 }).call(this,require("buffer").Buffer)
@@ -9657,6 +9659,9 @@ var sighash = function sighash(transaction, sighashType, inputNumber, subscript,
 
   // Copy script
   subscript = new Script(subscript);
+
+  // Add Fork value
+  sighashType = (Signature.FORKID_CBN_LYRA2RC0BAN << 8) | (sighashType & 0xff);
 
   // For no ForkId sighash, separators need to be removed.
   subscript.removeCodeseparators();
